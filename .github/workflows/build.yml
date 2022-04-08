@@ -5,10 +5,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: 安装依赖
-        run: npm install
-      - name: 打包
-        run: npm run build
       - name: 部署到服务器
         uses: easingthemes/ssh-deploy@main
         env:
@@ -17,6 +13,6 @@ jobs:
           SOURCE: "dist/"
           REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
           REMOTE_USER: ${{ secrets.REMOTE_USER }}
-          TARGET: "/www/wwwroot/oss"
+          TARGET: /www/wwwroot/oss
 
 
