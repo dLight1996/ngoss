@@ -4,6 +4,7 @@ jobs:
   build-ng:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v1
       - name: 安装依赖
         run: npm install
       - name: 打包
