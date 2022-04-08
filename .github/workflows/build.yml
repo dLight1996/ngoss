@@ -1,0 +1,12 @@
+name: angular部署
+on: push
+jobs:
+  build-ng:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 安装依赖
+        run: npm install
+      - name: 打包
+        run: npm build
+
+

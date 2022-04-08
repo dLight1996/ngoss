@@ -1,0 +1,11 @@
+<nz-modal [(nzVisible)]="visible" nzTitle="查看" (nzOnCancel)="handleCancel()" [nzFooter]="null" [nzMaskClosable]="false"
+          nzWidth="60vw">
+  <ng-container *nzModalContent>
+    <div *ngIf="currentFile?.type==='img'">
+      <img class="img" [src]="currentFile.url" alt="">
+    </div>
+    <div *ngIf="currentFile.type==='video'">
+      <video class="video" controls [src]="currentFile.url"></video>
+    </div>
+  </ng-container>
+</nz-modal>

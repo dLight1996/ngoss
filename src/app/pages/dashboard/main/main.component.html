@@ -1,0 +1,26 @@
+<nz-layout class="container">
+  <nz-header>
+    <ul nz-menu nzTheme="dark" nzMode="horizontal" class="header-menu">
+<!--      <li nz-menu-item>nav 1</li>-->
+<!--      <li nz-menu-item nzSelected>nav 2</li>-->
+<!--      <li nz-menu-item>nav 3</li>-->
+      <button class="logout" (click)="logout()" nz-button nzType="primary">退出</button>
+    </ul>
+  </nz-header>
+  <nz-content >
+    <nz-layout >
+      <nz-sider nzWidth="200px" nzTheme="light">
+        <ul nz-menu nzMode="inline">
+          <li nz-submenu nzOpen nzTitle="存储桶" nzIcon="user">
+            <ul *ngFor="let item of buckets; let i = index">
+              <li nz-menu-item nzSelected (click)="clickMenu(item.name)">{{item.name}}</li>
+            </ul>
+          </li>
+        </ul>
+      </nz-sider>
+      <nz-content class="inner-content">
+        <app-content [bucket]="selectedBucket"></app-content>
+      </nz-content>
+    </nz-layout>
+  </nz-content>
+</nz-layout>

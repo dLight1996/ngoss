@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+.ant-layout {
+  width: 100vw;
+  min-height: 100vh;
+}
+.ant-layout-footer {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.85);
+  font-size: 1rem;
+}
+.inner-content {
+  padding: 1.2rem;
+}
