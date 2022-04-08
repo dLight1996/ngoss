@@ -5,6 +5,7 @@ import {AppComponent} from './app.component';
 import {UserModule} from "./pages/user/user.module";
 import {CoreModule} from "./core/core.module";
 import {DashboardModule} from "./pages/dashboard/dashboard.module";
+import {HashLocationStrategy, LocationStrategy} from "@angular/common";
 
 
 @NgModule({
@@ -18,7 +19,7 @@ import {DashboardModule} from "./pages/dashboard/dashboard.module";
     DashboardModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule {
