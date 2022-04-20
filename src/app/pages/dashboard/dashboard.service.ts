@@ -12,11 +12,11 @@ export class DashboardService {
   }
 
   getBucket() {
-    return this.http.get('http://localhost:3000/oss/buckets')
+    return this.http.get('/oss/buckets')
   }
 
   getFiles = (bucket: string, prefix?: any) => {
-    return this.http.get('http://localhost:3000/oss/files', {
+    return this.http.get('/oss/files', {
       params: {
         bucket,
         prefix

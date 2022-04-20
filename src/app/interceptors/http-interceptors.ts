@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpEvent, HttpHandler, HttpInterceptor, HttpRequest} from '@angular/common/http';
-
+import {environment} from "../../environments/environment";
 import {catchError, Observable} from 'rxjs';
 import {NzMessageService} from "ng-zorro-antd/message";
 
@@ -11,8 +11,10 @@ export class MyInterceptor implements HttpInterceptor {
   ) {
   }
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+
     const authReq = req.clone({
-      headers: req.headers.set('Authorization', 'Bearer ' + localStorage.getItem('token'))
+      headers: req.headers.set('Authorization', 'Bearer ' + localStorage.getItem('token')),
+      url: environment.baseURL + req.url
     })
     return next.handle(authReq).pipe(
       catchError((err) => {

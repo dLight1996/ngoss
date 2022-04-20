@@ -11,7 +11,7 @@ export class UserService {
   ) { }
 
   login = (params: object) => {
-    return this.http.post('http://localhost:3000/login', {
+    return this.http.post('/login', {
       ...params
     })
   }

@@ -1,3 +1,11 @@
+/*
+ * @Author: 史建敏
+ * @Date: 2022-04-06 11:30:25
+ * @LastEditTime: 2022-04-11 21:04:54
+ * @LastEditors: 史建敏
+ * @Description:
+ * @FilePath: /ngoss/src/app/app.module.ts
+ */
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
@@ -19,7 +27,7 @@ import {HashLocationStrategy, LocationStrategy} from "@angular/common";
     DashboardModule,
     AppRoutingModule
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  // providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule {
